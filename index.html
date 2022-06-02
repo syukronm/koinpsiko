@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>FPJ | FPsi</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="Shortcut Icon" type="image/x-icon" href="gambars/logo.png" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="uiux/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="uiux/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="uiux/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="index.html"><img src="gambars/Logo.png" alt="User Image"></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg"><b>FPJ</b><br />
+      <b>F</b>ormulir <b>P</b>endaftaran <b>J</b>udisium</p>
+
+      <form action="users.php" method="post">
+        <div class="input-group mb-3">
+          <select name="prodi" required="">
+            <option value="1"> Prodi Psikologi Program Sarjana </option>
+            <option value="2"> Prodi Psikologi Program Magister</option>
+            <option value="3"> Prodi Psikologi Profesi Program Magister </option>
+            <option value="4"> Prodi Psikologi Terapan Program Magister </option>
+            <option value="5"> Prodi Psikologi Program Doktor   </option>
+            
+          </select>  
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block" name="btn">Isi Form</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <!-- /.social-auth-links -->
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="uiux/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="uiux/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="uiux/dist/js/adminlte.min.js"></script>
+
+</body>
+</html>

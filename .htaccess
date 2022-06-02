@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+Options +FollowSymLinks
+ErrorDocument 404 Halaman-Tidak-Ditemukan
+
+</IfModule>
+
+<files .htaccess>
+
+order allow,deny
+deny from all
+
+</files>
+
+Options All -Indexes
