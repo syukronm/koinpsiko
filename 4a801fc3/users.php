@@ -16,12 +16,12 @@ if(isset($_COOKIE['nextgen_token'])){
         if($row['ip'] == $_SERVER['REMOTE_ADDR'] || $row['useragent'] == $_SERVER['HTTP_USER_AGENT']){
             //kondisi bisa disesuaikan utk kebutuhan dengan ATAU / DAN
             //kondisi DAN boleh dipakai, tapi terlalu strict.. Lebih baik pakai ATAU saja.
-            $username = $row['tabi_uname'];
+            $username = $row['tabi_email'];
 
             //kembalikan data user yg sedang login,, siapa tahu nanti ingin diolah
-            $get_admin = $db->Execute("SELECT * FROM tab_mlebet WHERE tabi_uname = '$username'");
+            $get_admin = $db->Execute("SELECT * FROM tab_mlebet WHERE tabi_email= '$username'");
             $rget = $get_admin->FetchRow();
-            $sess_iduser = $rget['tabi_iduser'];
+            $tabi_fullname = $rget['tabi_fullname'];
             $sess_kodeakun = $rget['tabi_kodeakun'];                
         }
     }

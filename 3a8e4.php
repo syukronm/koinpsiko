@@ -4,8 +4,8 @@ require_once ('adodb/adodb.inc.php');
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
 $db=NewADOConnection('mysqli');
-$db -> Connect('localhost','root','','nextgen_inven');
+$db -> Connect('localhost','root','','nextgen_koin');
 
-$ekp = new Smarty;
+$koinp = new Smarty;
 
 ?>
