@@ -16,12 +16,12 @@ if(isset($_COOKIE['nextgen_token'])){
         if($row['ip'] == $_SERVER['REMOTE_ADDR'] || $row['useragent'] == $_SERVER['HTTP_USER_AGENT']){
             //kondisi bisa disesuaikan utk kebutuhan dengan ATAU / DAN
             //kondisi DAN boleh dipakai, tapi terlalu strict.. Lebih baik pakai ATAU saja.
-            $username = $row['tabi_email'];
+            $username = $row['tabi_uname'];
 
             //kembalikan data user yg sedang login,, siapa tahu nanti ingin diolah
-            $get_admin = $db->Execute("SELECT * FROM tab_mlebet WHERE tabi_email= '$username'");
+            $get_admin = $db->Execute("SELECT * FROM tab_mlebet WHERE tabi_uname = '$username'");
             $rget = $get_admin->FetchRow();
-            $tabi_fullname = $rget['tabi_fullname'];
+            $sess_iduser = $rget['tabi_iduser'];
             $sess_kodeakun = $rget['tabi_kodeakun'];                
         }
     }
@@ -86,40 +86,55 @@ case "upcatad":
 	    //cari extensi file dengan menggunakan fungsi explode
 	    $explode    = explode('.',$file_name);
 	    $extensi    = $explode[count($explode)-1];
-	 
-	    //check apakah type file sudah sesuai
-	    if(!in_array($extensi,$file_type)){
-	        $eror   = true;
-	        $pesan  = '- Type file yang anda upload tidak sesuai';
-	    }
-	    if($file_size > $max_size){
-	        $eror   = true;
-	        $pesan  = '- Ukuran file melebihi batas maximum';
-	    }
-	    //check ukuran file apakah sudah sesuai
-			
-		if($eror == true){
-	        print"<script>alert('$pesan');</script>";
-	    }
-		else
-		{	
-			$unik_time = date("Y-m-d-h-i-s");
-			$ganti_nama_file= $pendidikan.$unik_time.substr($foto,-4);
-			if(file_exists("files/".$ganti_nama_file))
-			{
-				unlink("files/".$ganti_nama_file);
+
+	 	if($foto=="")
+	    {
+		    $sql="INSERT INTO `tab_cpu`(`id_cpu`, `kode_barang`, `pemilik`, `unit`, `pcname`, `tahun`, `brand_cpu`, `hdd_tipe`, `ukuran_hdd`, `tipe_ram`, `ukuran_ram`, `prossesor`, `os`, `ada_lan`, `ip_lan`, `ada_wifi`, `brand_monitor`, `ukuran_monitor`, `kondisi`, `foto`, `ket`) VALUES ('', '$kode_barang', '$pemilik', '$unit', '$pcname', '$tahun', '$brand_cpu', '$hdd_tipe', '$ukuran_hdd', '$tipe_ram', '$ukuran_ram', '$prossesor', '$os', '$ada_lan', '$ip_lan', '$ada_wifi', '$brand_monitor', '$ukuran_monitor', '$kondisi', '', '$ket')";
+				if($db->Execute($sql))
+		        {
+		            print "<script>alert('Data CPU berhasil ditambahkan');location.href='users.php?Roiy97YthR=upcatad';</script>";
+		        }
+		        else
+		        {
+		            print "<script>alert('Data CPU gagal ditambahkan');location.href='users.php?Roiy97YthR=upcatad&kuy=t';</script>";
+		        }
+		 }
+	    else
+	    {
+	    	//check apakah type file sudah sesuai
+		    if(!in_array($extensi,$file_type)){
+		        $eror   = true;
+		        $pesan  = '- Type file yang anda upload tidak sesuai';
+		    }
+		    if($file_size > $max_size){
+		        $eror   = true;
+		        $pesan  = '- Ukuran file melebihi batas maximum';
+		    }
+		    //check ukuran file apakah sudah sesuai
+				
+			if($eror == true){
+		        print"<script>alert('$pesan');</script>";
+		    }
+			else
+			{	
+				$unik_time = date("Y-m-d-h-i-s");
+				$ganti_nama_file= $pendidikan.$unik_time.substr($foto,-4);
+				if(file_exists("files/".$ganti_nama_file))
+				{
+					unlink("files/".$ganti_nama_file);
+				}
+				copy($_FILES["foto"]["tmp_name"],"files/".$ganti_nama_file);
+				$sql="INSERT INTO `tab_cpu`(`id_cpu`, `kode_barang`, `pemilik`, `unit`, `pcname`, `tahun`, `brand_cpu`, `hdd_tipe`, `ukuran_hdd`, `tipe_ram`, `ukuran_ram`, `prossesor`, `os`, `ada_lan`, `ip_lan`, `ada_wifi`, `brand_monitor`, `ukuran_monitor`, `kondisi`, `foto`, `ket`) VALUES ('', '$kode_barang', '$pemilik', '$unit', '$pcname', '$tahun', '$brand_cpu', '$hdd_tipe', '$ukuran_hdd', '$tipe_ram', '$ukuran_ram', '$prossesor', '$os', '$ada_lan', '$ip_lan', '$ada_wifi', '$brand_monitor', '$ukuran_monitor', '$kondisi', '$ganti_nama_file', '$ket')";
+				if($db->Execute($sql))
+		        {
+		            print "<script>alert('Data CPU berhasil ditambahkan');location.href='users.php?Roiy97YthR=upcatad';</script>";
+		        }
+		        else
+		        {
+		            print "<script>alert('Data CPU gagal ditambahkan');location.href='users.php?Roiy97YthR=upcatad&kuy=t';</script>";
+		        }
 			}
-			copy($_FILES["foto"]["tmp_name"],"files/".$ganti_nama_file);
-			$sql="INSERT INTO `tab_cpu`(`id_cpu`, `kode_barang`, `pemilik`, `unit`, `pcname`, `tahun`, `brand_cpu`, `hdd_tipe`, `ukuran_hdd`, `tipe_ram`, `ukuran_ram`, `prossesor`, `os`, `ada_lan`, `ip_lan`, `ada_wifi`, `brand_monitor`, `ukuran_monitor`, `kondisi`, `foto`, `ket`) VALUES ('', '$kode_barang', '$pemilik', '$unit', '$pcname', '$tahun', '$brand_cpu', '$hdd_tipe', '$ukuran_hdd', '$tipe_ram', '$ukuran_ram', '$prossesor', '$os', '$ada_lan', '$ip_lan', '$ada_wifi', '$brand_monitor', '$ukuran_monitor', '$kondisi', '$ganti_nama_file', '$ket')";
-			if($db->Execute($sql))
-	        {
-	            print "<script>alert('Data CPU berhasil ditambahkan');location.href='users.php?Roiy97YthR=upcatad';</script>";
-	        }
-	        else
-	        {
-	            print "<script>alert('Data CPU gagal ditambahkan');location.href='users.php?Roiy97YthR=upcatad&kuy=t';</script>";
-	        }
-		}
+	    }
 	}
 	elseif($_GET['kuy']=="u")//ubah
 	{
