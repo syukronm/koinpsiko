@@ -42,7 +42,7 @@
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-graduation-cap bg-green"></i>
+                <i class="fa fa-users bg-green"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> Test Majemuk</h3>
                   <div class="timeline-body">
@@ -57,7 +57,7 @@
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-users bg-purple"></i>
+                <i class="fa fa-user bg-purple"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> Skala Tunggal</h3>
                   <div class="timeline-body">
@@ -72,7 +72,7 @@
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-trophy bg-yellow"></i>
+                <i class="fa fa-users bg-yellow"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> Skala Majemuk</h3>
                   <div class="timeline-body">
@@ -82,12 +82,12 @@
               </div>
 
               <div class="time-label">
-                <span class="bg-yellow">SOLuSi (Sarana Objektif Evaluasi Opsi)</span>
+                <span class="bg-red">SOLuSi (Sarana Objektif Evaluasi Opsi)</span>
               </div>
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-trophy bg-yellow"></i>
+                <i class="fa fa-trophy bg-red"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> SOLuSi</h3>
                   <div class="timeline-body">

@@ -1,7 +1,7 @@
 <?php
 require_once("../3a8e4.php");
 $sess_modup     = $_GET["Roiy97YthR"];
-$max_size   = 10000000; // 10MB
+$max_size   = 1000000; // 1MB
 $file_type  = array('jpg','jpeg','png','gif','bmp', 'JPG','JPEG','PNG','GIF','BMP');
 $eror   = false;
 
@@ -16,12 +16,12 @@ if(isset($_COOKIE['nextgen_token'])){
         if($row['ip'] == $_SERVER['REMOTE_ADDR'] || $row['useragent'] == $_SERVER['HTTP_USER_AGENT']){
             //kondisi bisa disesuaikan utk kebutuhan dengan ATAU / DAN
             //kondisi DAN boleh dipakai, tapi terlalu strict.. Lebih baik pakai ATAU saja.
-            $username = $row['tabi_uname'];
+            $username = $row['tabi_email'];
 
             //kembalikan data user yg sedang login,, siapa tahu nanti ingin diolah
-            $get_admin = $db->Execute("SELECT * FROM tab_mlebet WHERE tabi_uname = '$username'");
+            $get_admin = $db->Execute("SELECT * FROM tab_mlebet WHERE tabi_email= '$username'");
             $rget = $get_admin->FetchRow();
-            $sess_iduser = $rget['tabi_iduser'];
+            $tabi_fullname = $rget['tabi_fullname'];
             $sess_kodeakun = $rget['tabi_kodeakun'];                
         }
     }
@@ -43,22 +43,22 @@ case "1":
     		
     	$pb_ok = password_hash($pb, PASSWORD_DEFAULT);
     	
-    	$sql="SELECT tabi_konci FROM tab_mlebet WHERE tabi_iduser='$sess_iduser'";
-    	$rs=$db->Execute($sql);
-    	$row=$rs->FetchRow();
+    	$sql_tk="SELECT tabi_konci FROM tab_mlebet WHERE tabi_email= '$username'";
+    	$rs_tk=$db->Execute($sql_tk);
+    	$row_tk=$rs_tk->FetchRow();
     	
-    	$pass_db=$row[0];	
+    	$pass_db=$row_tk[0];	
 	
         if(password_verify($pl, $pass_db) and $pb==$c_pb)
         {
-            $sql_update="UPDATE tab_mlebet SET tabi_konci='$pb_ok' WHERE tabi_iduser='$sess_iduser'";
+            $sql_update="UPDATE tab_mlebet SET tabi_konci='$pb_ok' WHERE tabi_email='$username'";
             if($db->Execute($sql_update))
             {
                 print "<script>alert('Password berhasil diganti, anda akan dibawa kehalaman login');location.href='out.php';</script>";
             }
             else
             {
-                print "<script>alert('Password gagal diganti');location.href='gapas.php';</script>";
+                print "<script>alert('Password gagal diganti');location.href='gapas.php';</script>"; 
             }
         }
         else
@@ -69,13 +69,7 @@ case "1":
 break;
 }
 
-//ini untuk ambil nama user dan foto
-    $sql_namalogin = "SELECT `tabi_uname` FROM `tab_mlebet` WHERE tabi_iduser='$sess_iduser'";
-    $rs_namalogin = $db->Execute($sql_namalogin);
-    $row_namalogin = $rs_namalogin->FetchRow();
-    $namalogin = $row_namalogin[0];
-
-$ekp->assign("isi","gapas.tpl");
-$ekp->assign("namalogin",$namalogin);   
-$ekp->display("index.tpl");
+$koinp->assign("isi","gapas.tpl");
+$koinp->assign("namalogin",$tabi_fullname);   
+$koinp->display("index.tpl");
 ?>

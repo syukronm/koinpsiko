@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-06-20 23:02:50
+/* Smarty version 4.0.0, created on 2022-06-22 19:56:19
   from 'C:\xampp\htdocs\koinpsiko\4a801fc3\templates\beranda.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_62b0e07a6f65d8_79579130',
+  'unifunc' => 'content_62b357c37757a1_83314257',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cc8e32b823e68c82967470cf9a04c48a11532770' => 
     array (
       0 => 'C:\\xampp\\htdocs\\koinpsiko\\4a801fc3\\templates\\beranda.tpl',
-      1 => 1655758964,
+      1 => 1655920577,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62b0e07a6f65d8_79579130 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62b357c37757a1_83314257 (Smarty_Internal_Template $_smarty_tpl) {
 ?>  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -65,7 +65,7 @@ function content_62b0e07a6f65d8_79579130 (Smarty_Internal_Template $_smarty_tpl)
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-graduation-cap bg-green"></i>
+                <i class="fa fa-users bg-green"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> Test Majemuk</h3>
                   <div class="timeline-body">
@@ -80,7 +80,7 @@ function content_62b0e07a6f65d8_79579130 (Smarty_Internal_Template $_smarty_tpl)
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-users bg-purple"></i>
+                <i class="fa fa-user bg-purple"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> Skala Tunggal</h3>
                   <div class="timeline-body">
@@ -95,7 +95,7 @@ function content_62b0e07a6f65d8_79579130 (Smarty_Internal_Template $_smarty_tpl)
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-trophy bg-yellow"></i>
+                <i class="fa fa-users bg-yellow"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> Skala Majemuk</h3>
                   <div class="timeline-body">
@@ -105,12 +105,12 @@ function content_62b0e07a6f65d8_79579130 (Smarty_Internal_Template $_smarty_tpl)
               </div>
 
               <div class="time-label">
-                <span class="bg-yellow">SOLuSi (Sarana Objektif Evaluasi Opsi)</span>
+                <span class="bg-red">SOLuSi (Sarana Objektif Evaluasi Opsi)</span>
               </div>
               <!-- /.timeline-label -->
               <!-- timeline item -->
               <div>
-                <i class="fa fa-trophy bg-yellow"></i>
+                <i class="fa fa-trophy bg-red"></i>
                 <div class="timeline-item">
                   <h3 class="timeline-header"><a href="#">Penjelasan Singkat</a> SOLuSi</h3>
                   <div class="timeline-body">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2022-06-20 23:02:50
+/* Smarty version 4.0.0, created on 2022-06-22 20:09:21
   from 'C:\xampp\htdocs\koinpsiko\4a801fc3\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_62b0e07a6a6f86_75050396',
+  'unifunc' => 'content_62b35ad11478b1_91564961',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '250893d7886654afbdd58d0854675e7bbfa1b710' => 
     array (
       0 => 'C:\\xampp\\htdocs\\koinpsiko\\4a801fc3\\templates\\index.tpl',
-      1 => 1655758042,
+      1 => 1655921355,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62b0e07a6a6f86_75050396 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62b35ad11478b1_91564961 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -67,6 +67,9 @@ function content_62b0e07a6a6f86_75050396 (Smarty_Internal_Template $_smarty_tpl)
       </li>     
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php" class="nav-link">Beranda</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="datadiri.php" class="nav-link">Data Diri</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="gapas.php" class="nav-link">Ganti Password</a>

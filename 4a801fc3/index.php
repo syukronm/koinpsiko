@@ -616,10 +616,10 @@ case "3"://user
         $view[]=$row;
     }
 
-    $sdm->assign("view", $view);
-    $sdm->assign("hal", $navigasi);
-    $sdm->assign("jml_data", "Jumlah data Dosen = " . $totaldata);
-    $sdm->assign("isi","pegawai.tpl");
+    $koinp->assign("view", $view);
+    $koinp->assign("hal", $navigasi);
+    $koinp->assign("jml_data", "Jumlah data Dosen = " . $totaldata);
+    $koinp->assign("isi","pegawai.tpl");
 break;
 }
 

@@ -46,6 +46,9 @@
         <a href="index.php" class="nav-link">Beranda</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+        <a href="datadiri.php" class="nav-link">Data Diri</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="gapas.php" class="nav-link">Ganti Password</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
